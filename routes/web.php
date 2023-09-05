@@ -1,18 +1,17 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\V1\RefundController;
+use App\Http\Controllers\Api\V1\XmlController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+Route::post('customer/upload', [RefundController::class, 'uploadCustomers']);
+
+Route::get('xmls', [XmlController::class, 'listXML']);
+Route::get('xml/{id}/download', [XmlController::class, 'download']);
+Route::get('xml/{id}', [XmlController::class, 'xmlById']);
+Route::get('xml/{id}/log', [XmlController::class, 'logById']);
+
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('web.sections.static.login');
 });
