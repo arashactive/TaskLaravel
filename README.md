@@ -35,19 +35,19 @@ php artisan migrate
 
 # Project Routes
 #### Upload Excel file from customers:
-POST= /customer/upload
+POST= api/customer/upload
 
 #### List all previously uploaded XML files with pagination:
-GET= /xmls
+GET= api/xmls
 
 #### Download an XML file by selecting its ID:
-GET= /xml/{id}/download
+GET= api/xml/{id}/download
 
 #### View information of a specific XML file:
-GET= /xml/{id}
+GET= api/xml/{id}
 
 #### View all refund logs for a specific XML file:
-GET /xml/{id}/log
+GET api/xml/{id}/log
 
 ## System Process Explanation
 - After uploading an Excel file to the system, all internal information is extracted from it, converted to XML format, and then saved as a file on the server.
