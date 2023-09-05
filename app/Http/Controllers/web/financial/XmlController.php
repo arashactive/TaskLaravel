@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1;
+namespace App\Http\Controllers\web\financial;
 
 use App\Http\Controllers\Controller;
 use App\Http\Traits\JsonRespondController;
