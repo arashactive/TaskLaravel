@@ -22,7 +22,7 @@ Route::middleware(['auth:web'])->group(function () {
     /**
      * Dashboard Routes
      */
-    Route::get('/dashboard', DashboardController::class)->name('panel.dashboard');
+    Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('panel.dashboard');
 
     /**
      * Company Routes

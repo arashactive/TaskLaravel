@@ -28,7 +28,7 @@ class DashboardController extends Controller
      *
      * @return View
      */
-    public function __invoke(): View
+    public function dashboard(): View
     {
         $lastXMLs = $this->fileService->getAll();
         return view('web.sections.static.dashboard', compact('lastXMLs'));
