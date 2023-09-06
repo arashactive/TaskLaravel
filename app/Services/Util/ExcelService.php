@@ -1,7 +1,9 @@
 <?php
 
-namespace App\Services;
+namespace App\Services\Util;
 
+use App\Http\Traits\FileUploadTrait;
+use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 
 /**
@@ -13,6 +15,13 @@ use Maatwebsite\Excel\Facades\Excel;
  */
 class ExcelService
 {
+    use FileUploadTrait;
+
+    public function upload(Request $request): string
+    {
+        $excelUpload = $this->saveFiles($request);
+        return $excelUpload->file;
+    }
 
     /**
      * Convert an Excel file to an array of data.
