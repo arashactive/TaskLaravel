@@ -17,6 +17,7 @@ class PanelTest extends TestCase
 
     public function test_page_login()
     {
+        $this->withoutExceptionHandling();
         $response = $this->get('/');
         $response->assertStatus(200);
     }
