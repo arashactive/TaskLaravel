@@ -55,7 +55,7 @@ class FileRepository implements FileRepositoryInterface
      */
     public function getAll(): LengthAwarePaginator
     {
-        return $this->model->paginate();
+        return $this->model->orderBy('updated_at', 'desc')->paginate();
     }
 
     /**

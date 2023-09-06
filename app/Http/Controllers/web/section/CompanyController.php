@@ -1,16 +1,24 @@
 <?php
 
-namespace App\Http\Controllers\web\section;
+namespace App\Http\Controllers\Web\Section;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Sections\CompanyRequest;
 use App\Repositories\Contracts\CompanyRepositoryInterface;
+use Illuminate\View\View;
 
 class CompanyController extends Controller
 {
-
+    /**
+     * @var CompanyRepositoryInterface
+     */
     private $company;
 
+    /**
+     * CompanyController constructor.
+     *
+     * @param CompanyRepositoryInterface $company
+     */
     public function __construct(CompanyRepositoryInterface $company)
     {
         $this->company = $company;
@@ -19,9 +27,9 @@ class CompanyController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return View
      */
-    public function edit()
+    public function edit(): View
     {
         $company = $this->company->first();
         return view('web.sections.company.edit', compact('company'));
@@ -30,9 +38,8 @@ class CompanyController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param CompanyRequest $request
+     * return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function update(CompanyRequest $request)
     {

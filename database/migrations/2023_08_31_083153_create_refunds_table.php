@@ -21,6 +21,9 @@ return new class extends Migration
             $table->string('iban');
             $table->string('bic');
             $table->float('amount');
+            $table->string('refrence')->nullable();
+            $table->string('end2end')->nullable();
+            $table->string('description')->nullable();
             $table->timestamps();
         });
     }

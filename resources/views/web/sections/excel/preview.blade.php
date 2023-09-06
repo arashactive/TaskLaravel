@@ -8,7 +8,7 @@
 <div class="w-full overflow-hidden rounded-lg shadow-xs">
     <div class="w-full overflow-x-auto">
 
-        <livewire:document.new-doc :excelRows="$excelRows"/>
+        <livewire:document.new-doc :excelRows="$excelRows" :excelPath="$excelPath"/>
 
     </div>
 

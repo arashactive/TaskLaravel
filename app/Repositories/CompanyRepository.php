@@ -40,7 +40,7 @@ class CompanyRepository implements CompanyRepositoryInterface
         string $IBAN,
         string $BIC
     ): Company {
-        $this->model->delete();
+        $this->model->truncate();        ;
         return $this->model->create([
             'name' => $name,
             'IBAN' =>  $IBAN,

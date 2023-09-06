@@ -22,6 +22,6 @@ class Refund extends Model
      * @var array
      */
     protected $fillable = [
-        'file_id', 'name', 'iban', 'bic', 'amount'
+        'file_id', 'name', 'iban', 'bic', 'amount', 'refrence', 'end2end', 'description'
     ];
 }
