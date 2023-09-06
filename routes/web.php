@@ -16,6 +16,9 @@ Route::post('/login', [AuthController::class, 'attempt'])->name('auth.login.post
  * Authenticated User Routes
  */
 Route::middleware(['auth:web'])->group(function () {
+
+    Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+
     /**
      * Dashboard Routes
      */

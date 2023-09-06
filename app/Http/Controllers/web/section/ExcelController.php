@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Sections\ExcelRequest;
 use App\Services\FileService;
 use App\Services\Util\ExcelService;
-use Illuminate\Http\Response;
 use Illuminate\View\View;
 
 class ExcelController extends Controller
@@ -75,9 +74,9 @@ class ExcelController extends Controller
      * Download the XML file for a specific file ID.
      *
      * @param int $fileId
-     * @return Response
+     * @return \Symfony\Component\HttpFoundation\BinaryFileResponse
      */
-    public function download(int $fileId): Response
+    public function download(int $fileId)
     {
         $file = $this->fileService->findById($fileId);
         return response()->download(storage_path('app/' . $file->xml_file));
